@@ -2,3 +2,4 @@
 .dart_tool/pub/bin/test/test.dart.snapshot.dart2
 .dart_tool/pub/bin/sdk-version
 pubspec.lock
+.dart_tool/package_config.json
