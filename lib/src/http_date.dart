@@ -90,16 +90,16 @@ class _HttpDate {
    */
   static DateTime parse(String date) {
     final int SP = 32;
-    const List wkdays = const ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    const List weekdays = const [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ];
+    //const List wkdays = const ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    // const List weekdays = const [
+    //   "Monday",
+    //   "Tuesday",
+    //   "Wednesday",
+    //   "Thursday",
+    //   "Friday",
+    //   "Saturday",
+    //   "Sunday"
+    // ];
     const List months = const [
       "Jan",
       "Feb",
@@ -114,41 +114,41 @@ class _HttpDate {
       "Nov",
       "Dec"
     ];
-    const List wkdaysLowerCase = const [
-      "mon",
-      "tue",
-      "wed",
-      "thu",
-      "fri",
-      "sat",
-      "sun"
-    ];
-    const List weekdaysLowerCase = const [
-      "monday",
-      "tuesday",
-      "wednesday",
-      "thursday",
-      "friday",
-      "saturday",
-      "sunday"
-    ];
-    const List monthsLowerCase = const [
-      "jan",
-      "feb",
-      "mar",
-      "apr",
-      "may",
-      "jun",
-      "jul",
-      "aug",
-      "sep",
-      "oct",
-      "nov",
-      "dec"
-    ];
+    // const List wkdaysLowerCase = const [
+    //   "mon",
+    //   "tue",
+    //   "wed",
+    //   "thu",
+    //   "fri",
+    //   "sat",
+    //   "sun"
+    // ];
+    // const List weekdaysLowerCase = const [
+    //   "monday",
+    //   "tuesday",
+    //   "wednesday",
+    //   "thursday",
+    //   "friday",
+    //   "saturday",
+    //   "sunday"
+    // ];
+    // const List monthsLowerCase = const [
+    //   "jan",
+    //   "feb",
+    //   "mar",
+    //   "apr",
+    //   "may",
+    //   "jun",
+    //   "jul",
+    //   "aug",
+    //   "sep",
+    //   "oct",
+    //   "nov",
+    //   "dec"
+    // ];
 
     final int formatRfc1123 = 0;
-    final int formatRfc850 = 1;
+    //final int formatRfc850 = 1;
     final int formatAsctime = 2;
 
     int index = 0;
@@ -166,36 +166,36 @@ class _HttpDate {
       index += s.length;
     }
 
-    int expectWeekday() {
-      int weekday;
-      // The formatting of the weekday signals the format of the date string.
-      int pos = date.indexOf(",", index);
-      if (pos == -1) {
-        int pos = date.indexOf(" ", index);
-        if (pos == -1) throw new HttpException("Invalid HTTP date $date");
-        tmp = date.substring(index, pos);
-        index = pos + 1;
-        weekday = wkdays.indexOf(tmp);
-        if (weekday != -1) {
-          format = formatAsctime;
-          return weekday;
-        }
-      } else {
-        tmp = date.substring(index, pos);
-        index = pos + 1;
-        weekday = wkdays.indexOf(tmp);
-        if (weekday != -1) {
-          format = formatRfc1123;
-          return weekday;
-        }
-        weekday = weekdays.indexOf(tmp);
-        if (weekday != -1) {
-          format = formatRfc850;
-          return weekday;
-        }
-      }
-      throw new HttpException("Invalid HTTP date $date");
-    }
+    // int expectWeekday() {
+    //   int weekday;
+    //   // The formatting of the weekday signals the format of the date string.
+    //   int pos = date.indexOf(",", index);
+    //   if (pos == -1) {
+    //     int pos = date.indexOf(" ", index);
+    //     if (pos == -1) throw new HttpException("Invalid HTTP date $date");
+    //     tmp = date.substring(index, pos);
+    //     index = pos + 1;
+    //     weekday = wkdays.indexOf(tmp);
+    //     if (weekday != -1) {
+    //       format = formatAsctime;
+    //       return weekday;
+    //     }
+    //   } else {
+    //     tmp = date.substring(index, pos);
+    //     index = pos + 1;
+    //     weekday = wkdays.indexOf(tmp);
+    //     if (weekday != -1) {
+    //       format = formatRfc1123;
+    //       return weekday;
+    //     }
+    //     weekday = weekdays.indexOf(tmp);
+    //     if (weekday != -1) {
+    //       format = formatRfc850;
+    //       return weekday;
+    //     }
+    //   }
+    //   throw new HttpException("Invalid HTTP date $date");
+    // }
 
     int expectMonth(String separator) {
       int pos = date.indexOf(separator, index);
@@ -230,7 +230,7 @@ class _HttpDate {
       }
     }
 
-    int weekday = expectWeekday();
+    //int weekday = expectWeekday();
     int day;
     int month;
     int year;

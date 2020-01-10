@@ -1,0 +1,27 @@
+# Defines a default set of lint rules enforced for
+# projects at Google. For details and rationale,
+# see https://github.com/dart-lang/pedantic#enabled-lints.
+# include: package:pedantic/analysis_options.yaml
+
+# For lint rules and documentation, see http://dart-lang.github.io/linter/lints.
+# Uncomment to specify additional rules.
+linter:
+  rules:
+    unused_catch_clause: false
+    todo: false
+    unused_element: false
+    missing_return: false
+    unused_field: false
+
+analyzer:
+  errors:
+    unused_catch_clause: ignore
+    todo: ignore
+    unused_element: ignore
+    missing_return: ignore    
+    unused_field: ignore
+
+# analyzer:
+#   exclude:
+#     - lib/src/http_headers.dart
+#     - lib/src/http_impl.dart

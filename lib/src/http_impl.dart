@@ -3170,7 +3170,7 @@ class _HttpClientDigestCredentials extends _HttpClientCredentials
     String qop;
     String cnonce;
     String nc;
-    var x;
+    //var x;
     hasher = new _MD5()..add(credentials.ha1.codeUnits)..add([_CharCode.COLON]);
     if (credentials.qop == "auth") {
       qop = credentials.qop;
