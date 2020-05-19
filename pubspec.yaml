@@ -1,5 +1,5 @@
 name: alt_http
-version: 0.2.1
+version: 0.3.0
 description: Patched original Dart HttpClient to allow case sensitive headers.
 homepage: https://github.com/shaxxx/AltHttp
 
